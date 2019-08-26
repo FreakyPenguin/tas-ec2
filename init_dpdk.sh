@@ -7,9 +7,10 @@ echo 1 >/sys/module/vfio/parameters/enable_unsafe_noiommu_mode
 
 if (ifconfig -a | grep -q ens6)
 then
-  echo
-else
   ifconfig ens6 down
   ~/dpdk-inst/sbin/dpdk-devbind -b vfio-pci 0000:00:06.0
 fi
-echo 1024 >/sys/devices/system/node/node*/hugepages/hugepages-2048kB/nr_hugepages
+
+for n in /sys/devices/system/node/node* ; do
+  echo 1024 >$n/hugepages/hugepages-2048kB/nr_hugepages
+done
