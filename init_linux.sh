@@ -6,11 +6,11 @@ then
   exit 1
 fi
 
-ifconfig ens6 up $1
 
 if (ifconfig -a | grep -q ens6)
 then
-  ~/dpdk-inst/sbin/dpdk-devbind -b ena 0000:00:06.0
-else
   echo
+else
+  ~/dpdk-inst/sbin/dpdk-devbind -b ena 0000:00:06.0
 fi
+ifconfig ens6 up $1
