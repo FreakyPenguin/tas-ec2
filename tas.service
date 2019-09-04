@@ -1,0 +1,11 @@
+[Unit]
+Description=TCP acceleration service.
+After=network-online.target
+
+[Service]
+Type=notify
+ExecStart=/bin/bash /home/ubuntu/tas/ec2/wrapper.sh
+
+[Install]
+WantedBy=network-online.target
+
