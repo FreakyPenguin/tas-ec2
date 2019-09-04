@@ -12,7 +12,7 @@ echo 1 >/sys/module/vfio/parameters/enable_unsafe_noiommu_mode
 if (ifconfig -a | grep -q $INTF)
 then
   ifconfig $INTF down
-  ~/dpdk-inst/sbin/dpdk-devbind -b vfio-pci $PCI
+  dpdk-devbind.py -b vfio-pci $PCI
 fi
 
 for n in /sys/devices/system/node/node* ; do
