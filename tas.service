@@ -1,6 +1,7 @@
 [Unit]
 Description=TCP acceleration service.
 After=network-online.target
+Before=systemd-networkd.service cloud-config.service cloud-final.service
 
 [Service]
 Type=notify
