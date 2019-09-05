@@ -1,12 +1,13 @@
 [Unit]
 Description=TCP acceleration service.
-After=network-online.target
+DefaultDependencies=no
 Before=systemd-networkd.service cloud-config.service cloud-final.service
+#After=basic.target systemd-journald.socket
 
 [Service]
 Type=notify
 ExecStart=/bin/bash /home/ubuntu/tas/ec2/wrapper.sh
 
 [Install]
-WantedBy=network-online.target
+WantedBy=network-online.target  cloud-config.service cloud-final.service
 
