@@ -20,4 +20,6 @@ for n in /sys/devices/system/node/node* ; do
 done
 
 
-exec /home/ubuntu/tas/code/tas/tas --kni-name=$INTF --ip-addr=10.0.0.32/24
+exec /home/ubuntu/tas/ec2/linux-wrapper/wrapper \
+	/home/ubuntu/tas/code/tas/tas \
+	--kni-name=$INTF --ip-addr=10.0.0.32/24

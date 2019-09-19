@@ -2,6 +2,7 @@
 Description=TCP acceleration service.
 DefaultDependencies=no
 Before=systemd-networkd.service cloud-config.service cloud-final.service
+RequiresMountsFor=/sys /dev
 #After=basic.target systemd-journald.socket
 
 [Service]

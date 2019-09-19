@@ -108,7 +108,7 @@ static int start_tas(int argc, char *argv[])
   pid = fork();
   if (pid == 0) {
     // in child
-    execvp("/home/ubuntu/tas/code/tas/tas", argv);
+    execvp(argv[1], argv + 1);
     exit(1);
   } else if (pid < 0) {
     return -1;
@@ -137,6 +137,11 @@ int main(int argc, char *argv[])
   char *ifname;
   pid_t pid;
   int status;
+
+  if (argc == 1) {
+    fprintf(stderr, "wrapper TAS-PATH [ARGUMENTS...]\n");
+    return 1;
+  }
 
   if (start_tas(argc, argv))
     return 1;
