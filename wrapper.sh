@@ -1,15 +1,13 @@
 #!/bin/sh
-INTF=ens6
-PCI=0000:00:06.0
 
 modprobe vfio-pci
 modprobe rte_kni
 echo 1 >/sys/module/vfio/parameters/enable_unsafe_noiommu_mode
 
-if (ifconfig -a | grep -q $INTF)
+if (ifconfig -a | grep -q $TAS_INTF_NAME)
 then
-  ifconfig $INTF down
-  dpdk-devbind.py -b vfio-pci $PCI
+  ifconfig $TAS_INTF_NAME down
+  dpdk-devbind.py -b vfio-pci $TAS_INTF_PCI
 fi
 
 for n in /sys/devices/system/node/node* ; do
@@ -19,4 +17,4 @@ done
 
 exec /home/ubuntu/tas/ec2/linux-wrapper/wrapper \
 	/home/ubuntu/tas/code/tas/tas \
-	--kni-name=$INTF --ip-addr=10.0.0.32/24
+	--kni-name=$TAS_INTF_NAME $TAS_PARAMS_EXTRA
