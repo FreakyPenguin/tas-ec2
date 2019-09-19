@@ -1,0 +1,15 @@
+Source: tas-wrapper
+Section: net
+Priority: optional
+Maintainer: Antoine Kaufmann <antoinek@mpi-sws.org>
+Build-Depends: debhelper (>= 9), tas-dev, libnl-3-dev, libnl-route-3-dev, libsystemd-dev
+Standards-Version: 3.9.8
+Homepage: https://tcp-acceleration-service.github.io/
+#Vcs-Git: https://anonscm.debian.org/collab-maint/tas-wrapper.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/tas-wrapper.git
+
+Package: tas-wrapper
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, tas
+Description: TAS linux integration wrapper.
+ Contains systemd service and wrapper to configure interface through linux.

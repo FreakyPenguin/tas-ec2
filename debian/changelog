@@ -1,0 +1,5 @@
+tas-wrapper (0.1-1) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Antoine Kaufmann <antoinek@mpi-sws.org>  Thu, 19 Sep 2019 15:25:01 +0200

@@ -1,0 +1,4 @@
+tas.service /lib/systemd/system
+tas /etc/default
+wrapper.sh /usr/lib/tas-wrapper
+linux-wrapper/wrapper /usr/lib/tas-wrapper
