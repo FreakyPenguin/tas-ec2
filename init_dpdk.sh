@@ -8,7 +8,7 @@ echo 1 >/sys/module/vfio/parameters/enable_unsafe_noiommu_mode
 if (ifconfig -a | grep -q ens6)
 then
   ifconfig ens6 down
-  ~/dpdk-inst/sbin/dpdk-devbind -b vfio-pci 0000:00:06.0
+  dpdk-devbind.py -b vfio-pci 0000:00:06.0
 fi
 
 for n in /sys/devices/system/node/node* ; do
