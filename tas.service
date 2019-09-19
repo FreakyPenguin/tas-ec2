@@ -7,9 +7,9 @@ RequiresMountsFor=/sys /dev
 
 [Service]
 Type=notify
-ExecStart=/bin/bash /home/ubuntu/tas/ec2/wrapper.sh
+ExecStart=/bin/bash /usr/lib/tas-wrapper/wrapper.sh
 EnvironmentFile=/etc/default/tas
 
 [Install]
-WantedBy=network-online.target  cloud-config.service cloud-final.service
+WantedBy=network-online.target cloud-config.service cloud-final.service
 

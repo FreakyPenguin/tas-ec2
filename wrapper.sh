@@ -15,6 +15,6 @@ for n in /sys/devices/system/node/node* ; do
 done
 
 
-exec /home/ubuntu/tas/ec2/linux-wrapper/wrapper \
-	/home/ubuntu/tas/code/tas/tas \
+exec /usr/lib/tas-wrapper/wrapper \
+	tas \
 	--kni-name=$TAS_INTF_NAME $TAS_PARAMS_EXTRA
