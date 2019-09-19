@@ -9,6 +9,7 @@ LDLIBS+= -lnl-3 -lnl-route-3 -lsystemd
 
 wrapper: wrapper.o $(TAS_CODE)/lib/libtas.so
 
+all: wrapper
 
 clean:
 	rm -f wrapper *.o
