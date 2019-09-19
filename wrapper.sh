@@ -2,9 +2,6 @@
 INTF=ens6
 PCI=0000:00:06.0
 
-mkdir -p /mnt/huge
-(mount | grep -q /mnt/huge) || mount -t hugetlbfs nodev /mnt/huge
-
 modprobe vfio-pci
 modprobe rte_kni
 echo 1 >/sys/module/vfio/parameters/enable_unsafe_noiommu_mode
