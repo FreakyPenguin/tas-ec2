@@ -1,6 +1,6 @@
 #!/bin/sh
-mkdir -p /mnt/huge
-(mount | grep -q /mnt/huge) || mount -t hugetlbfs nodev /mnt/huge
+#mkdir -p /mnt/huge
+#(mount | grep -q /mnt/huge) || mount -t hugetlbfs nodev /mnt/huge
 
 modprobe vfio-pci
 echo 1 >/sys/module/vfio/parameters/enable_unsafe_noiommu_mode
