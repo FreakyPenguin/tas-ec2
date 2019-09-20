@@ -10,6 +10,6 @@ Homepage: https://tcp-acceleration-service.github.io/
 
 Package: tas-wrapper
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, tas
+Depends: ${shlibs:Depends}, ${misc:Depends}, tas, dpdk-rte-kni-dkms, dpdk
 Description: TAS linux integration wrapper.
  Contains systemd service and wrapper to configure interface through linux.
