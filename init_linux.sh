@@ -11,6 +11,6 @@ if (ifconfig -a | grep -q ens6)
 then
   echo
 else
-  ~/dpdk-inst/sbin/dpdk-devbind -b ena 0000:00:06.0
+  dpdk-devbind.py -b ena 0000:00:06.0
 fi
 ifconfig ens6 up $1
